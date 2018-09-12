@@ -14,4 +14,8 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
+    public Account findById(Long id){
+        return accountRepository.findOne(id);
+    }
+
 }
