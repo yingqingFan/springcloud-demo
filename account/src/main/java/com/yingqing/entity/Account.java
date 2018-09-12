@@ -2,18 +2,17 @@ package com.yingqing.entity;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "account")
-public class Account {
+public class Account implements Serializable {
 
+    private static final long serialVersionUID = -7999408564687316150L;
     private Long id;
 
     private String name;
 
-    public Account(String name) {
-        this.name = name;
-    }
 
     @Id
     @Column(name = "id")

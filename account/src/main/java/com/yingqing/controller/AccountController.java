@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/accounts")
@@ -34,5 +31,13 @@ public class AccountController {
         mqProducer.send("hello");
         account = accountService.save(account);
         return new ResponseEntity<Account>(account, HttpStatus.CREATED);
+    }
+
+    @ApiOperation(value = "find by id", notes = "find")
+    @ApiImplicitParam(value = "id",paramType = "path", name = "id", dataType = "long", required = true)
+    @RequestMapping(value = "/{id}",  method = RequestMethod.GET)
+    public ResponseEntity<Account> findById(@PathVariable Long id){
+        Account account = accountService.findById(id);
+        return new ResponseEntity<Account>(account, HttpStatus.OK);
     }
 }
