@@ -28,7 +28,7 @@ public class AccountController {
     @ApiImplicitParam(value = "account body",paramType = "body", name = "account", dataType = "Account", required = true)
     @RequestMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, method = RequestMethod.POST)
     public ResponseEntity<Account> save(@RequestBody Account account){
-        mqProducer.send("hello");
+//        mqProducer.send("hello");
         account = accountService.save(account);
         return new ResponseEntity<Account>(account, HttpStatus.CREATED);
     }
