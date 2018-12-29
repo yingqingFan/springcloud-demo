@@ -20,5 +20,9 @@
     <input type="text" name="name" />
     <input type="submit" value="create account">
 </form>
+
+<form name="logout" method="post" action="/demo/logout">
+    <input type="submit" value="logout">
+</form>
 </body>
 </html>

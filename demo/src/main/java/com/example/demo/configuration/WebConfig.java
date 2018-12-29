@@ -9,7 +9,12 @@ import org.springframework.context.annotation.Configuration;
 public class WebConfig {
 
     @Bean
-    public ServletRegistrationBean MyServlet1(){
+    public ServletRegistrationBean myServlet1(){
         return new ServletRegistrationBean(new MyServlet(),"/mysev");
     }
+
+//    @Bean
+//    public ServletRegistrationBean logout(){
+//        return new ServletRegistrationBean(new MyServlet(),"/mysev");
+//    }
 }
