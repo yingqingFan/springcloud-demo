@@ -11,6 +11,8 @@
     <modules>
         <module>account</module>
         <module>eureka-service</module>
+        <module>zipkin-server</module>
+        <!--<module>demo</module>-->
     </modules>
 
     <parent>
