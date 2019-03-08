@@ -29,15 +29,15 @@ public class UserPasswordServlet extends HttpServlet {
 
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//		String password = request.getParameter("password");
-//		String userId = request.getParameter("id");
-//		int passwordStrengthLevel = 1;
-//		if (userId != null && userId.equals("")){
-//			passwordStrengthLevel = -2;
-//		}
-//		if(StringUtils.isEmpty(password)){
-//			passwordStrengthLevel = -1;
-//		}
+		String password = request.getParameter("password");
+		String userId = request.getParameter("id");
+		int passwordStrengthLevel = 1;
+		if (userId != null && userId.equals("")){
+			passwordStrengthLevel = -2;
+		}
+		if(StringUtils.isEmpty(password)){
+			passwordStrengthLevel = -1;
+		}
 		response.setContentType("text/xml;charset=UTF-8"); 
 //		System.out.println(passwordStrengthLevel);
 //		String data = null;
@@ -48,7 +48,7 @@ public class UserPasswordServlet extends HttpServlet {
 //		}if(passwordStrengthLevel==2){
 //			data="strong";
 //		}
-		response.getWriter().print(1);
+		response.getWriter().print(passwordStrengthLevel);
     }
 
 	@Override
